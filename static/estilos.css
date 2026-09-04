@@ -1,0 +1,40 @@
+body {
+  background-color: #f6f2fb;
+}
+
+.navbar {
+  background-color: #b486dc !important;
+}
+
+.navbar-brand,
+.nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: #e9e1f7 !important;
+}
+
+h1,
+h2,
+h3 {
+  color: #5e4b8b;
+}
+
+.card {
+  border-color: #d8cff0;
+}
+
+.btn-primary {
+  background-color: #8e7dbe;
+  border-color: #8e7dbe;
+}
+
+.btn-primary:hover {
+  background-color: #5e4b8b;
+  border-color: #5e4b8b;
+}
+
+footer {
+  background-color: #8e7dbe !important;
+}
