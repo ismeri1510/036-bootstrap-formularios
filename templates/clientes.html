@@ -8,33 +8,91 @@
 
         <form method="POST">
           <div class="mb-3">
-            <label class="form-label">Nombre:</label>
+            <label class="form-label"> Nombre: </label>
+
             <input type="text" name="nombre" class="form-control" required />
           </div>
 
           <div class="mb-3">
-            <label class="form-label">NIT:</label>
+            <label class="form-label"> NIT: </label>
+
             <input type="text" name="nit" class="form-control" required />
           </div>
 
           <div class="mb-3">
-            <label class="form-label">Correo:</label>
+            <label class="form-label"> Correo: </label>
+
             <input type="email" name="correo" class="form-control" required />
           </div>
 
           <div class="mb-3">
-            <label class="form-label">Teléfono:</label>
+            <label class="form-label"> Teléfono: </label>
+
             <input type="text" name="telefono" class="form-control" required />
           </div>
 
           <div class="mb-3">
-            <label class="form-label">Dirección:</label>
-            <textarea name="direccion" class="form-control" required></textarea>
+            <label class="form-label"> Dirección: </label>
+
+            <textarea
+              name="direccion"
+              class="form-control"
+              rows="3"
+              required
+            ></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary">
+          <!-- Este botón abre el modal -->
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#modalConfirmacion"
+          >
             Registrar cliente
           </button>
+
+          <!-- Modal de confirmación -->
+          <div
+            class="modal fade"
+            id="modalConfirmacion"
+            tabindex="-1"
+            aria-labelledby="modalConfirmacionLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalConfirmacionLabel">
+                    Confirmar registro
+                  </h5>
+
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                  ></button>
+                </div>
+
+                <div class="modal-body">¿Deseas registrar este cliente?</div>
+
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Cancelar
+                  </button>
+
+                  <!-- Este botón sí envía el formulario -->
+                  <button type="submit" class="btn btn-primary">
+                    Confirmar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </form>
       </div>
     </div>
