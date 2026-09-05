@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block contenido %}
+
+<div class="alert alert-success">Cliente recibido correctamente.</div>
+
+<div class="card">
+  <div class="card-body">
+    <h2 class="card-title">Datos del cliente</h2>
+
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Nombre:</strong> {{ nombre }}</li>
+
+      <li class="list-group-item"><strong>NIT:</strong> {{ nit }}</li>
+
+      <li class="list-group-item"><strong>Correo:</strong> {{ correo }}</li>
+
+      <li class="list-group-item"><strong>Teléfono:</strong> {{ telefono }}</li>
+
+      <li class="list-group-item">
+        <strong>Dirección:</strong> {{ direccion }}
+      </li>
+    </ul>
+
+    <p class="mt-3 text-muted">
+      Estos datos solo se muestran como confirmación y todavía no se guardan.
+    </p>
+  </div>
+</div>
+
+{% endblock %}
