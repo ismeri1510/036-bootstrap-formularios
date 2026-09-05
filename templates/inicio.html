@@ -1,7 +1,62 @@
 {% extends "base.html" %} {% block contenido %}
 
-<h1>Página de Inicio</h1>
+<div class="text-center mb-4">
+  <h1>Bienvenido a Ismerisa Arts</h1>
 
-<p>Bienvenido al sistema de formularios de negocio.</p>
+  <p>
+    Sistema de gestión para clientes, proveedores e inicio de sesión de un
+    emprendimiento de productos hechos con resina.
+  </p>
+</div>
+
+<div class="row g-4">
+  <div class="col-md-4">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">Clientes</h5>
+
+        <p class="card-text">
+          Registra información de clientes de Ismerisa Arts.
+        </p>
+
+        <a href="{{ url_for('clientes') }}" class="btn btn-primary">
+          Ir a Clientes
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">Proveedores</h5>
+
+        <p class="card-text">
+          Registra proveedores de resina, moldes, pigmentos y otros materiales.
+        </p>
+
+        <a href="{{ url_for('proveedores') }}" class="btn btn-primary">
+          Ir a Proveedores
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">Login</h5>
+
+        <p class="card-text">
+          Ingresa al sistema utilizando tu usuario y contraseña.
+        </p>
+
+        <a href="{{ url_for('login') }}" class="btn btn-primary">
+          Iniciar sesión
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}
