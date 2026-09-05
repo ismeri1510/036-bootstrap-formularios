@@ -29,9 +29,29 @@ def clientes():
     return render_template("clientes.html")
 
 
-@app.route("/proveedores")
+@app.route("/proveedores", methods=["GET", "POST"])
 def proveedores():
-    return "Página de proveedores"
+    if request.method == "POST":
+        empresa = request.form["empresa"]
+        contacto = request.form["contacto"]
+        nit = request.form["nit"]
+        tipo = request.form["tipo"]
+        pago = request.form["pago"]
+
+        # Checkbox: si está marcado devuelve "si", si no, None
+        activo = request.form.get("activo")
+
+        return render_template(
+            "proveedores_confirmacion.html",
+            empresa=empresa,
+            contacto=contacto,
+            nit=nit,
+            tipo=tipo,
+            pago=pago,
+            activo=activo
+        )
+
+    return render_template("proveedores.html")
 
 
 @app.route("/login")

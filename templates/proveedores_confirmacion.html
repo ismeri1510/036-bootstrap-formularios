@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block contenido %}
+
+<div class="alert alert-success">Proveedor recibido correctamente.</div>
+
+<div class="card">
+  <div class="card-body">
+    <h2 class="card-title">Datos del proveedor</h2>
+
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Empresa:</strong> {{ empresa }}</li>
+
+      <li class="list-group-item"><strong>Contacto:</strong> {{ contacto }}</li>
+
+      <li class="list-group-item"><strong>NIT:</strong> {{ nit }}</li>
+
+      <li class="list-group-item"><strong>Tipo:</strong> {{ tipo }}</li>
+
+      <li class="list-group-item">
+        <strong>Condición de pago:</strong> {{ pago }}
+      </li>
+
+      <li class="list-group-item">
+        <strong>Proveedor activo:</strong>
+
+        {% if activo %} Sí {% else %} No {% endif %}
+      </li>
+    </ul>
+
+    <p class="mt-3 text-muted">
+      Estos datos solo se muestran como confirmación y todavía no se guardan.
+    </p>
+  </div>
+</div>
+
+{% endblock %}
