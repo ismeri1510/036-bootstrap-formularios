@@ -2,6 +2,9 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+USUARIOS = {
+    "admin": "1234"
+}
 
 @app.route("/")
 def inicio():
@@ -54,9 +57,28 @@ def proveedores():
     return render_template("proveedores.html")
 
 
-@app.route("/login")
+@app.route("/login", methods=["GET", "POST"])
 def login():
-    return "Página de login"
+    if request.method == "POST":
+        usuario = request.form["usuario"]
+        contrasena = request.form["contrasena"]
+        recordar = request.form.get("recordar")
+
+        if usuario in USUARIOS and USUARIOS[usuario] == contrasena:
+            mensaje = f"Bienvenida, {usuario}"
+            tipo_alerta = "success"
+        else:
+            mensaje = "Usuario o contraseña incorrectos"
+            tipo_alerta = "danger"
+
+        return render_template(
+            "login_resultado.html",
+            mensaje=mensaje,
+            tipo_alerta=tipo_alerta,
+            recordar=recordar
+        )
+
+    return render_template("login.html")
 
 
 if __name__ == "__main__":
